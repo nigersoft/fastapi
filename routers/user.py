@@ -11,7 +11,7 @@ f = Fernet(key)
 
 user = APIRouter()
 
-@user.get("/",response_model=list[User], tags=["Users"])
+@user.get("/")
 def home():
     return cnx.execute(ModelUsers.select()).fetchall()
 
